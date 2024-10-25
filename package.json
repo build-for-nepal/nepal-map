@@ -1,0 +1,15 @@
+{
+  "name": "nepal-map",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [
+    "map",
+    "nepal-map",
+    "nepali-map",
+    "google-map",
+    "nepal-places"
+  ],
+  "author": "Techgaun Nepal",
+  "license": "ISC"
+}
