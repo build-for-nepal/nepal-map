@@ -10,6 +10,5 @@ export interface MapProps {
   center: LatLngExpression;
   zoom: number;
   dataPoints: MapDataPoint[];
-  geoJsonData?: FeatureCollection; // Make geoJsonData optional for more flexibility
   onFeatureClick?: (feature: any) => void; // Optional callback for feature clicks
 }

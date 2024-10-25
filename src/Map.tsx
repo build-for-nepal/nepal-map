@@ -2,14 +2,13 @@ import { FC } from 'react';
 import { MapContainer, Marker, Popup, GeoJSON, TileLayer } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import { MapProps } from './type/type';
+import { FeatureCollection } from 'geojson';
 
-const Map: FC<MapProps> = ({
-  center,
-  zoom,
-  dataPoints,
-  geoJsonData,
-  onFeatureClick,
-}) => {
+import nepGeoJsonData from './constants/nepal.geo.json';
+
+const Map: FC<MapProps> = ({ center, zoom, dataPoints, onFeatureClick }) => {
+  const geoJsonData: FeatureCollection = nepGeoJsonData as FeatureCollection;
+
   // Default feature click handler if no custom function is provided
   const handleFeatureClick = (feature: any) => {
     if (onFeatureClick) {
@@ -36,10 +35,7 @@ const Map: FC<MapProps> = ({
         attribution="&copy; <a href='https://www.openstreetmap.org/copyright'>OpenStreetMap</a> contributors"
       />
 
-      {/* Render GeoJSON data if provided */}
-      {geoJsonData && (
-        <GeoJSON data={geoJsonData} onEachFeature={onEachFeature} />
-      )}
+      <GeoJSON data={geoJsonData} onEachFeature={onEachFeature} />
 
       {/* Render markers */}
       {dataPoints.map((point, index) => (
