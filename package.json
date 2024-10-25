@@ -2,7 +2,12 @@
   "name": "nepal-map",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "lint": "eslint 'src/**/*.{ts,tsx}'",
+    "lint:fix": "eslint 'src/**/*.{ts,tsx}' --fix",
+    "format": "prettier --write 'src/**/*.{ts,tsx}'",
+    "build": "tsc"
+  },
   "keywords": [
     "map",
     "nepal-map",
