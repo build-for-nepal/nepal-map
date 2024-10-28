@@ -14,7 +14,7 @@ const Map: FC<MapProps> = ({ center, zoom, dataPoints, onFeatureClick }) => {
     if (onFeatureClick) {
       onFeatureClick(feature);
     } else {
-      alert(`Feature clicked: ${feature.properties?.name}`);
+      alert(feature.properties?.name);
     }
   };
 
