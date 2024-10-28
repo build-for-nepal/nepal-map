@@ -38,11 +38,12 @@ const Map: FC<MapProps> = ({ center, zoom, dataPoints, onFeatureClick }) => {
       <GeoJSON data={geoJsonData} onEachFeature={onEachFeature} />
 
       {/* Render markers */}
-      {dataPoints.map((point, index) => (
-        <Marker key={index} position={point.position}>
-          <Popup>{point.description}</Popup>
-        </Marker>
-      ))}
+      {dataPoints &&
+        dataPoints.map((point, index) => (
+          <Marker key={index} position={point.position}>
+            <Popup>{point.description}</Popup>
+          </Marker>
+        ))}
     </MapContainer>
   );
 };

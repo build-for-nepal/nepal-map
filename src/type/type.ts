@@ -9,6 +9,6 @@ export interface MapDataPoint {
 export interface MapProps {
   center: LatLngExpression;
   zoom: number;
-  dataPoints: MapDataPoint[];
+  dataPoints?: MapDataPoint[];
   onFeatureClick?: (feature: any) => void; // Optional callback for feature clicks
 }
