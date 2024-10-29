@@ -1,6 +1,6 @@
 # Nepal Map Component
 
-The `NepalMap` component is a React-based interactive map of Nepal, designed to provide users with an engaging way to explore different areas of the country. It showcases detailed demographic information, making it suitable for a variety of applications.
+The `nepal-map` package is a `react-based` package that displays an interactive map of Nepal, giving users an engaging way to explore different areas of the country. It showcases detailed demographic information, making it suitable for a variety of applications.
 
 ## Installation
 
