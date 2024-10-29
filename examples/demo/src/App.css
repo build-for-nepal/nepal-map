@@ -1,0 +1,45 @@
+.app-container {
+  display: flex;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.sidebar {
+  width: 200px;
+  padding: 10px;
+  background-color: #f4f4f4;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar h3 {
+  margin-top: 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar li {
+  padding: 8px 0;
+  cursor: pointer;
+  color: #555;
+  transition:
+    color 0.2s,
+    font-weight 0.2s;
+}
+
+.sidebar li:hover {
+  color: #007bff;
+  font-weight: 600;
+}
+
+.main-content {
+  flex: 1;
+  height: 100vh;
+  overflow: auto;
+  padding: 20px;
+  background-color: #ffffff;
+}

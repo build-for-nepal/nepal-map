@@ -1,3 +1,5 @@
+import React from 'react';
+
 type Props = {
   province: {
     name: string;
@@ -14,9 +16,9 @@ const ProvinceDetail = ({ province }: Props) => {
   );
 };
 
-const styles = {
+const styles: { [key: string]: React.CSSProperties } = {
   container: {
-    textAlign: 'center',
+    textAlign: 'center' as const,
     padding: '20px',
     borderRadius: '8px',
     backgroundColor: '#f9f9f9',
@@ -26,9 +28,9 @@ const styles = {
   },
   title: {
     fontSize: '16px',
-    fontWeight: '600',
+    fontWeight: 600,
     color: '#333',
-    margin: '0',
+    margin: 0,
   },
   population: {
     fontSize: '14px',
