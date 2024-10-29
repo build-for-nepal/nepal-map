@@ -14,7 +14,7 @@ npm install nepal-map
 
 ### Basic Example
 
-Here's a basic example of how to use the `NepalMap` component in your application:
+Here's a basic example of how to use the `nepal-map` package in your application:
 
 ```jsx
 import React from 'react';
@@ -49,7 +49,7 @@ export default App;
 
 ## Example Province Data
 
-When using the `NepalMap`, you can provide dataPoints in the following format:
+When using the `nepal-map` package, you can provide dataPoints in the following format:
 
 ```javascript
 dataPoints={[
