@@ -1,21 +1,34 @@
-import { Map } from '../../../src/index';
-import Description from './component/Description';
+import { useState } from 'react';
+import ProvincePopulation from './apps/ProvincePopulation';
+import { BasicExample } from './apps/BasicExample';
+import './App.css';
+
 function App() {
+  const [currentDemo, setCurrentDemo] = useState<string>('province-population');
+
+  const renderDemo = () => {
+    switch (currentDemo) {
+      case 'province-population':
+        return <ProvincePopulation />;
+      case 'basic':
+        return <BasicExample />;
+      default:
+        return <ProvincePopulation />;
+    }
+  };
+
   return (
-    <div
-      style={{
-        height: '100vh',
-        width: '100vw',
-      }}
-    >
-      <Map
-        center={[28.3949, 84.124]}
-        zoom={7}
-        dataPoints={[
-          { position: [27.7, 85.3], description: <Description /> },
-          { position: [28.2, 83.9], description: 'Pokhara' },
-        ]}
-      />
+    <div className="app-container">
+      <aside className="sidebar">
+        <h3>Demo Examples</h3>
+        <ul>
+          <li onClick={() => setCurrentDemo('basic')}>Basic</li>
+          <li onClick={() => setCurrentDemo('province-population')}>
+            Province Population
+          </li>
+        </ul>
+      </aside>
+      <main className="main-content">{renderDemo()}</main>
     </div>
   );
 }
