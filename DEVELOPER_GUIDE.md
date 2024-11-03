@@ -1,6 +1,6 @@
 # Developer Guide for NepalMap
 
-Welcome to the developer guide for the `nepal-map` package. This document provides details on setting up the development environment, understanding the code structure, and contributing to the project.
+This document provides details on setting up the development environment, understanding the code structure, and contributing to the `nepal-map` project.
 
 ## Table of Contents
 
