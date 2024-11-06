@@ -28,6 +28,13 @@ export const mountainsOver8000m = [
       'The fifth highest mountain in the world, located in the Mahalangur range of the Nepal Himalayas, east of Mount Everest.',
   },
   {
+    name: 'Cho Oyu',
+    elevation: '8,188 m',
+    coordinates: [28.0942, 86.6603],
+    description:
+      'The sixth highest mountain in the world, located on the border between Nepal and Tibet, to the west of Mount Everest.',
+  },
+  {
     name: 'Dhaulagiri',
     elevation: '8,167 m',
     coordinates: [28.69771, 83.486145],
