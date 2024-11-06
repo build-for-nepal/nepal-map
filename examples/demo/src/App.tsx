@@ -5,7 +5,7 @@ import './App.css';
 import TouristDestination from './apps/TouristDestination';
 
 function App() {
-  const [currentDemo, setCurrentDemo] = useState<string>('province-population');
+  const [currentDemo, setCurrentDemo] = useState<string>('basic');
 
   const renderDemo = () => {
     switch (currentDemo) {
@@ -25,11 +25,22 @@ function App() {
       <aside className="sidebar">
         <h3>Demo Examples</h3>
         <ul>
-          <li onClick={() => setCurrentDemo('basic')}>Basic</li>
-          <li onClick={() => setCurrentDemo('province-population')}>
+          <li
+            onClick={() => setCurrentDemo('basic')}
+            className={currentDemo === 'basic' ? 'active' : ''}
+          >
+            Basic
+          </li>
+          <li
+            onClick={() => setCurrentDemo('province-population')}
+            className={currentDemo === 'province-population' ? 'active' : ''}
+          >
             Province Population
           </li>
-          <li onClick={() => setCurrentDemo('tourist-destination')}>
+          <li
+            onClick={() => setCurrentDemo('tourist-destination')}
+            className={currentDemo === 'tourist-destination' ? 'active' : ''}
+          >
             Tourist Destination
           </li>
         </ul>
