@@ -11,7 +11,7 @@ const Card = ({ property }: Props) => {
   return (
     <div style={styles.container}>
       <h3 style={styles.title}>{property.name}</h3>
-      <p style={styles.population}>{property.description}</p>
+      <p style={styles.desc}>{property.description}</p>
     </div>
   );
 };
@@ -32,7 +32,7 @@ const styles: { [key: string]: React.CSSProperties } = {
     color: '#333',
     margin: 0,
   },
-  population: {
+  desc: {
     fontSize: '14px',
     color: '#666',
     margin: '5px 0 0',
