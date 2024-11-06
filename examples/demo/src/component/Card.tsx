@@ -1,17 +1,17 @@
 import React from 'react';
 
 type Props = {
-  province: {
+  property: {
     name: string;
-    population: string;
+    description: string;
   };
 };
 
-const ProvinceDetail = ({ province }: Props) => {
+const Card = ({ property }: Props) => {
   return (
     <div style={styles.container}>
-      <h3 style={styles.title}>{province.name}</h3>
-      <p style={styles.population}>जनसंख्या: {province.population}</p>
+      <h3 style={styles.title}>{property.name}</h3>
+      <p style={styles.desc}>{property.description}</p>
     </div>
   );
 };
@@ -32,11 +32,11 @@ const styles: { [key: string]: React.CSSProperties } = {
     color: '#333',
     margin: 0,
   },
-  population: {
+  desc: {
     fontSize: '14px',
     color: '#666',
     margin: '5px 0 0',
   },
 };
 
-export default ProvinceDetail;
+export default Card;
