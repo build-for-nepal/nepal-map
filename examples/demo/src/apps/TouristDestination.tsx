@@ -1,14 +1,12 @@
 import { Map } from '../../../../src/index';
-import TouristDestinationDetail from '../component/TouristDestinationDetail';
+import Card from '../component/Card';
 import { touristDestinations } from '../constants/tourist-destination';
 
 const TouristDestination = () => {
   const dataPoints = touristDestinations.map(
     ({ position, name, description }) => ({
       position: position as unknown as [number, number],
-      description: (
-        <TouristDestinationDetail destination={{ name, description }} />
-      ),
+      description: <Card property={{ name, description }} />,
     }),
   );
 
