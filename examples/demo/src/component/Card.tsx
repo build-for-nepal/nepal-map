@@ -4,14 +4,19 @@ type Props = {
   property: {
     name: string;
     description: string;
+    image?: string;
   };
 };
 
 const Card = ({ property }: Props) => {
+  console.log(property.image);
   return (
     <div style={styles.container}>
       <h3 style={styles.title}>{property.name}</h3>
       <p style={styles.desc}>{property.description}</p>
+      {property.image && (
+        <img style={styles.image} src={property.image} alt={property.name} />
+      )}
     </div>
   );
 };
@@ -36,6 +41,10 @@ const styles: { [key: string]: React.CSSProperties } = {
     fontSize: '14px',
     color: '#666',
     margin: '5px 0 0',
+  },
+  image: {
+    width: '100%',
+    borderRadius: 8,
   },
 };
 
