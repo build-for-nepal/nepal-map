@@ -2,7 +2,8 @@ import { FC } from 'react';
 import { MapContainer, Marker, Popup, GeoJSON, TileLayer } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import { MapProps } from './type/type';
-import { FeatureCollection } from 'geojson';
+import { Feature, FeatureCollection, Geometry } from 'geojson';
+import { Layer } from 'leaflet';
 
 import provinceGeoJsonData from './constants/province.geo.json';
 
@@ -16,15 +17,15 @@ const Province: FC<MapProps> = ({
     provinceGeoJsonData as FeatureCollection;
 
   // Default feature click handler if no custom function is provided
-  const handleFeatureClick = (feature: any) => {
+  const handleFeatureClick = (feature: Feature<Geometry, any>) => {
     if (onFeatureClick) {
       onFeatureClick(feature);
     } else {
-      alert(feature.properties?.name);
+      alert(feature.properties?.PR_NAME);
     }
   };
 
-  const onEachFeature = (feature: any, layer: any) => {
+  const onEachFeature = (feature: Feature<Geometry, any>, layer: Layer) => {
     layer.on({
       click: () => handleFeatureClick(feature),
     });
