@@ -1,11 +1,12 @@
 import { useState } from 'react';
-import ProvincePopulation from './apps/ProvincePopulation';
-import { BasicExample } from './apps/BasicExample';
 import './App.css';
-import TouristDestination from './apps/TouristDestination';
-import MountainOver8000 from './apps/MountainOver8000';
+import { BasicExample } from './apps/BasicExample';
+import { DistrictExample } from './apps/DistrictExample';
 import MajorCities from './apps/MajorCities';
+import MountainOver8000 from './apps/MountainOver8000';
 import NationalPark from './apps/NationalPark';
+import ProvincePopulation from './apps/ProvincePopulation';
+import TouristDestination from './apps/TouristDestination';
 
 function App() {
   const [currentDemo, setCurrentDemo] = useState<string>('basic');
@@ -24,6 +25,8 @@ function App() {
         return <MajorCities />;
       case 'national-park':
         return <NationalPark />;
+      case 'district-map':
+        return <DistrictExample />;
       default:
         return <BasicExample />;
     }
@@ -69,6 +72,12 @@ function App() {
             className={currentDemo === 'national-park' ? 'active' : ''}
           >
             National Park
+          </li>
+          <li
+            onClick={() => setCurrentDemo('district-map')}
+            className={currentDemo === 'district-map' ? 'active' : ''}
+          >
+            District map
           </li>
         </ul>
       </aside>
