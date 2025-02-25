@@ -1,5 +1,4 @@
 import { LatLngExpression } from 'leaflet';
-import { FeatureCollection } from 'geojson';
 import { ReactNode } from 'react';
 
 export interface MapDataPoint {

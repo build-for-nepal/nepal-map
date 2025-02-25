@@ -4,6 +4,7 @@ import { BasicExample } from './apps/BasicExample';
 import './App.css';
 import TouristDestination from './apps/TouristDestination';
 import MountainOver8000 from './apps/MountainOver8000';
+import MajorCities from './apps/MajorCities';
 import NationalPark from './apps/NationalPark';
 
 function App() {
@@ -19,6 +20,8 @@ function App() {
         return <TouristDestination />;
       case 'mountain-over-8000':
         return <MountainOver8000 />;
+      case 'major-cities':
+        return <MajorCities />;
       case 'national-park':
         return <NationalPark />;
       default:
@@ -54,6 +57,12 @@ function App() {
             className={currentDemo === 'mountain-over-8000' ? 'active' : ''}
           >
             Mountains Over 8000m
+          </li>
+          <li
+            onClick={() => setCurrentDemo('major-cities')}
+            className={currentDemo === 'major-cities' ? 'active' : ''}
+          >
+            Major Cities
           </li>
           <li
             onClick={() => setCurrentDemo('national-park')}
