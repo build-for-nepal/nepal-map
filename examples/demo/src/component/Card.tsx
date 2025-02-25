@@ -9,7 +9,6 @@ type Props = {
 };
 
 const Card = ({ property }: Props) => {
-  console.log(property.image);
   return (
     <div style={styles.container}>
       <h3 style={styles.title}>{property.name}</h3>
