@@ -4,6 +4,7 @@ import { BasicExample } from './apps/BasicExample';
 import './App.css';
 import TouristDestination from './apps/TouristDestination';
 import MountainOver8000 from './apps/MountainOver8000';
+import NationalPark from './apps/NationalPark';
 
 function App() {
   const [currentDemo, setCurrentDemo] = useState<string>('basic');
@@ -18,6 +19,8 @@ function App() {
         return <TouristDestination />;
       case 'mountain-over-8000':
         return <MountainOver8000 />;
+      case 'national-park':
+        return <NationalPark />;
       default:
         return <BasicExample />;
     }
@@ -51,6 +54,12 @@ function App() {
             className={currentDemo === 'mountain-over-8000' ? 'active' : ''}
           >
             Mountains Over 8000m
+          </li>
+          <li
+            onClick={() => setCurrentDemo('national-park')}
+            className={currentDemo === 'national-park' ? 'active' : ''}
+          >
+            National Park
           </li>
         </ul>
       </aside>
