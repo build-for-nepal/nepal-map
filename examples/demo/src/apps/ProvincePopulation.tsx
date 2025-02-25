@@ -1,4 +1,4 @@
-import { Map } from '../../../../src/index';
+import { Province } from '../../../../src/index';
 import Card from '../component/Card';
 import { provincesData } from '../constants/province-data';
 
@@ -10,7 +10,9 @@ const ProvincePopulation = () => {
     ),
   }));
 
-  return <Map center={[28.3949, 84.124]} zoom={7} dataPoints={dataPoints} />;
+  return (
+    <Province center={[28.3949, 84.124]} zoom={7} dataPoints={dataPoints} />
+  );
 };
 
 export default ProvincePopulation;
