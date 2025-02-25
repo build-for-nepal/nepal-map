@@ -5,6 +5,7 @@ import './App.css';
 import TouristDestination from './apps/TouristDestination';
 import MountainOver8000 from './apps/MountainOver8000';
 import MajorCities from './apps/MajorCities';
+import NationalPark from './apps/NationalPark';
 
 function App() {
   const [currentDemo, setCurrentDemo] = useState<string>('basic');
@@ -21,6 +22,8 @@ function App() {
         return <MountainOver8000 />;
       case 'major-cities':
         return <MajorCities />;
+      case 'national-park':
+        return <NationalPark />;
       default:
         return <BasicExample />;
     }
@@ -60,6 +63,12 @@ function App() {
             className={currentDemo === 'major-cities' ? 'active' : ''}
           >
             Major Cities
+          </li>
+          <li
+            onClick={() => setCurrentDemo('national-park')}
+            className={currentDemo === 'national-park' ? 'active' : ''}
+          >
+            National Park
           </li>
         </ul>
       </aside>
