@@ -1,4 +1,5 @@
-import { FeatureCollection } from 'geojson';
+import { Feature, FeatureCollection, Geometry } from 'geojson';
+import { Layer } from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import { FC } from 'react';
 import { GeoJSON, MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
@@ -14,7 +15,7 @@ const DistrictMap: FC<MapProps> = ({
   const disJsonData: FeatureCollection = districtJsonData as FeatureCollection;
 
   // Default feature click handler if no custom function is provided
-  const handleFeatureClick = (feature: any) => {
+  const handleFeatureClick = (feature: Feature<Geometry, any>) => {
     if (onFeatureClick) {
       onFeatureClick(feature);
     } else {
@@ -22,7 +23,7 @@ const DistrictMap: FC<MapProps> = ({
     }
   };
 
-  const onEachFeature = (feature: any, layer: any) => {
+  const onEachFeature = (feature: Feature<Geometry, any>, layer: Layer) => {
     layer.on({
       click: () => handleFeatureClick(feature),
     });
