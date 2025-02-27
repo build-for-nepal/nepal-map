@@ -5,16 +5,38 @@ type Props = {
     name: string;
     description: string;
     image?: string;
+    attributionTitle?: string;
+    attributionUrl?: string;
   };
 };
 
+function handleIconClick(attributionUrl: string | undefined) {
+  if (attributionUrl) {
+    window.open(attributionUrl);
+  }
+}
+
 const Card = ({ property }: Props) => {
+  const { description, name, attributionTitle, attributionUrl, image } =
+    property;
+
   return (
     <div style={styles.container}>
-      <h3 style={styles.title}>{property.name}</h3>
-      <p style={styles.desc}>{property.description}</p>
-      {property.image && (
-        <img style={styles.image} src={property.image} alt={property.name} />
+      <h3 style={styles.title}>{name}</h3>
+      <p style={styles.desc}>{description}</p>
+      {image && (
+        <div style={styles.iconParent}>
+          <img style={styles.image} src={image} alt={name} />
+
+          {attributionTitle && attributionUrl && (
+            <img
+              onClick={() => handleIconClick(attributionUrl)}
+              title={attributionTitle}
+              style={styles.icon}
+              src="/icons/info.svg"
+            />
+          )}
+        </div>
       )}
     </div>
   );
@@ -44,6 +66,16 @@ const styles: { [key: string]: React.CSSProperties } = {
   image: {
     width: '100%',
     borderRadius: 8,
+  },
+  iconParent: {
+    position: 'relative',
+  },
+  icon: {
+    position: 'absolute',
+    top: 2,
+    right: 4,
+    height: 12,
+    width: 12,
   },
 };
 
