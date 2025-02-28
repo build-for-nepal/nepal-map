@@ -7,6 +7,7 @@ import MountainOver8000 from './apps/MountainOver8000';
 import NationalPark from './apps/NationalPark';
 import ProvincePopulation from './apps/ProvincePopulation';
 import TouristDestination from './apps/TouristDestination';
+import { MunicipalityExample } from './apps/MunicipalityExample';
 
 function App() {
   const [currentDemo, setCurrentDemo] = useState<string>('basic');
@@ -25,8 +26,8 @@ function App() {
         return <MajorCities />;
       case 'national-park':
         return <NationalPark />;
-      case 'district-map':
-        return <DistrictExample />;
+      case 'municipality':
+        return <MunicipalityExample />;
       default:
         return <BasicExample />;
     }
@@ -78,6 +79,12 @@ function App() {
             className={currentDemo === 'district-map' ? 'active' : ''}
           >
             District map
+          </li>
+          <li
+            onClick={() => setCurrentDemo('municipality')}
+            className={currentDemo === 'municipality' ? 'active' : ''}
+          >
+            Municipality
           </li>
         </ul>
       </aside>
