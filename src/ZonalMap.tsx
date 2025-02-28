@@ -6,7 +6,12 @@ import { Feature, FeatureCollection, Geometry } from 'geojson';
 import { Layer } from 'leaflet';
 import zoneGeoJsonData from './constants/zone.geo.json';
 
-const Zone: FC<MapProps> = ({ center, zoom, dataPoints, onFeatureClick }) => {
+const ZonalMap: FC<MapProps> = ({
+  center,
+  zoom,
+  dataPoints,
+  onFeatureClick,
+}) => {
   const geoJsonData: FeatureCollection = zoneGeoJsonData as FeatureCollection;
 
   // Default feature click handler if no custom function is provided
@@ -48,4 +53,4 @@ const Zone: FC<MapProps> = ({ center, zoom, dataPoints, onFeatureClick }) => {
   );
 };
 
-export default Zone;
+export default ZonalMap;

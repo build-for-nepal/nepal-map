@@ -1,8 +1,8 @@
-import { Zone } from '../../../../src';
+import { ZonalMap } from '../../../../src';
 
 const ZoneExample = () => {
   return (
-    <Zone
+    <ZonalMap
       center={[28.3949, 84.124]}
       zoom={7}
       dataPoints={[
