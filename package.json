@@ -1,5 +1,5 @@
 {
-  "name": "nepal-map",
+  "name": "@build-for-nepal/nepal-map",
   "version": "1.0.0",
   "type": "module",
   "main": "index.ts",
