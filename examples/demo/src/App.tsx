@@ -8,6 +8,7 @@ import NationalPark from './apps/NationalPark';
 import ProvincePopulation from './apps/ProvincePopulation';
 import TouristDestination from './apps/TouristDestination';
 import { MunicipalityExample } from './apps/MunicipalityExample';
+import ZoneExample from './apps/ZoneExample';
 
 function App() {
   const [currentDemo, setCurrentDemo] = useState<string>('basic');
@@ -28,6 +29,10 @@ function App() {
         return <NationalPark />;
       case 'municipality':
         return <MunicipalityExample />;
+      case 'district-map':
+        return <DistrictExample />;
+      case 'zone':
+        return <ZoneExample />;
       default:
         return <BasicExample />;
     }
@@ -85,6 +90,12 @@ function App() {
             className={currentDemo === 'municipality' ? 'active' : ''}
           >
             Municipality
+          </li>
+          <li
+            onClick={() => setCurrentDemo('zone')}
+            className={currentDemo === 'zone' ? 'active' : ''}
+          >
+            Zones
           </li>
         </ul>
       </aside>
