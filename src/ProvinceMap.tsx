@@ -14,7 +14,7 @@ const Province: FC<MapProps> = ({
   onFeatureClick,
 }) => {
   const geoJsonData: FeatureCollection =
-    provinceGeoJsonData as FeatureCollection;
+    provinceGeoJsonData as unknown as FeatureCollection;
 
   // Default feature click handler if no custom function is provided
   const handleFeatureClick = (feature: Feature<Geometry, any>) => {
