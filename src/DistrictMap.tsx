@@ -12,7 +12,8 @@ const DistrictMap: FC<MapProps> = ({
   dataPoints,
   onFeatureClick,
 }) => {
-  const disJsonData: FeatureCollection = districtJsonData as FeatureCollection;
+  const disJsonData: FeatureCollection =
+    districtJsonData as unknown as FeatureCollection;
 
   // Default feature click handler if no custom function is provided
   const handleFeatureClick = (feature: Feature<Geometry, any>) => {
