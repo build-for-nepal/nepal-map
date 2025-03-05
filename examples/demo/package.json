@@ -1,15 +1,20 @@
 {
-  "name": "demo",
+  "name": "nepal-map",
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://build-for-nepal.github.io/nepal-map",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@build-for-nepal/nepal-map": "file:../..",
+    "preview": "^0.1.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
@@ -22,6 +27,7 @@
     "eslint": "^9.13.0",
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.13",
+    "gh-pages": "^6.3.0",
     "globals": "^15.11.0",
     "typescript": "~5.6.2",
     "typescript-eslint": "^8.10.0",
