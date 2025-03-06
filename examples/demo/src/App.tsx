@@ -9,6 +9,7 @@ import ProvincePopulation from './apps/ProvincePopulation';
 import TouristDestination from './apps/TouristDestination';
 import { MunicipalityExample } from './apps/MunicipalityExample';
 import ZoneExample from './apps/ZoneExample';
+import { Toaster } from 'react-hot-toast';
 
 function App() {
   const [currentDemo, setCurrentDemo] = useState<string>('basic');
@@ -99,7 +100,10 @@ function App() {
           </li>
         </ul>
       </aside>
-      <main className="main-content">{renderDemo()}</main>
+      <main className="main-content">
+        {renderDemo()}
+        <Toaster />
+      </main>
     </div>
   );
 }
